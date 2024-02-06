@@ -1,0 +1,30 @@
+{
+  "name": "the_weather_app",
+  "version": "1.0.0",
+  "description": "simple weather app",
+  "main": "index.js",
+  "author": "Sreekanth D",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.10.0",
+    "dotenv": "^16.4.1",
+    "dotenv-webpack": "^8.0.1",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "scripts": {
+    "build": "npx webpack --config webpack.config.js",
+    "start": "npx webpack serve"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1"
+  }
+}

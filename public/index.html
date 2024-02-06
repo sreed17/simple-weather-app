@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Weather App</title>
+    <link
+      href="normalize.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --clr-bg: 230 80% 20%;
+        --clr-bg-text: 0 0% 100%;
+        --clr-surface: 0 0% 100%;
+        --clr-text: 230 0% 0%;
+        --height: 46px;
+        --card-height: 46px;
+        --rounded: 1rem;
+        --padding: 1rem;
+
+        font-family: "Poppins", sans-serif;
+        font-size: 16pt;
+      }
+
+      body {
+        background-color: hsl(var(--clr-bg));
+      }
+      .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100dvh;
+      }
+
+      .weather-card {
+        display: none;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/013712526e.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="loader">
+      <progress max="100" value="20" id="loading-progress" />
+    </div>
+    <div class="clear-btn-box">
+      <button id="clear-btn" class="fa-solid fa-broom"></button>
+    </div>
+    <div class="weather-card hidden">
+      <!-- Search -->
+      <form class="search-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="search-box__input-wrapper">
+          <input
+            placeholder="Enter city-name"
+            type="text"
+            name="city-name"
+            id="city-name-input"
+          />
+        </div>
+        <button type="submit" class="fa-solid fa-magnifying-glass"></button>
+      </form>
+
+      <!-- Loading -->
+      <div class="loading-box hidden">
+        <span>Loading...</span>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-box hidden">
+        <div class="error-box__img">
+          <img src="images/empty-box.png" alt="" />
+        </div>
+        <p class="error-box__description">Try Anthor location!</p>
+      </div>
+
+      <!-- Weather display -->
+      <div class="weather-box hidden">
+        <div class="weather-box__img">
+          <img src="images/rain-moderate.jpg" alt="" />
+        </div>
+        <p class="weather-box__description">Rain</p>
+      </div>
+
+      <!-- Info display -->
+      <div class="info-box hidden">
+        <!-- props  -->
+        <!-- Feels like -->
+        <div class="info-item-alt">
+          <span>Feels like</span>
+          <div class="info-item-alt__value">
+            <span class="info-item-alt__var" id="feels-like-var">0</span
+            ><span class="info-item-alt__unit">°C</span>
+          </div>
+        </div>
+        <!-- temperature -->
+        <div class="info-item">
+          <i class="fa-solid fa-temperature-three-quarters"></i>
+          <div class="info-item__data">
+            <div class="info-item__value">
+              <span class="info-item__var" id="tempurature-var">0</span
+              ><span class="info-item__unit">°C</span>
+            </div>
+            <span class="info-item__label">Temperature</span>
+          </div>
+        </div>
+        <!-- humidity -->
+        <div class="info-item">
+          <i class="fa-solid fa-droplet"></i>
+          <div class="info-item__data">
+            <div class="info-item__value">
+              <span class="info-item__var" id="humidity-var">0</span
+              ><span class="info-item__unit">%</span>
+            </div>
+            <span class="info-item__label">Humidity</span>
+          </div>
+        </div>
+        <!-- wind speed -->
+        <div class="info-item">
+          <i class="fa-solid fa-wind"></i>
+          <div class="info-item__data">
+            <div class="info-item__value">
+              <span class="info-item__var" id="wind-speed-var">0</span
+              ><span class="info-item__unit">kmph</span>
+            </div>
+            <span class="info-item__label">Wind speed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
