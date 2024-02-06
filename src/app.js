@@ -19,8 +19,7 @@ import {
 } from "rxjs";
 import Fuse from "fuse.js";
 import "./styles/index.scss";
-
-const cityList = ["New Delhi", "Bangalore", "New York", "Turkey"];
+import cityList from "./cities.json";
 
 const fuse = new Fuse(cityList, {
   includeScore: true,
