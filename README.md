@@ -4,7 +4,7 @@ Get the current weather data from openweathermap.org api.
 
 ## Preview
 
-![Image](src/assets/screenshot1.png)
+<img src="src/assets/screenshot1.png" width="200"/>
 
 ## Features
 
