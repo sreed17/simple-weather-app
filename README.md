@@ -2,6 +2,10 @@
 
 Get the current weather data from openweathermap.org api.
 
+## Preview
+
+![Image](src/assets/screenshot1.png)
+
 ## Features
 
 - search by city name and display weather, tempurature, humidity and windspeed.
