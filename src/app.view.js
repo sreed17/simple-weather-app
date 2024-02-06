@@ -79,3 +79,36 @@ export const expandCard = (expand = undefined) => {
     rootCSSVariable(heightVar, heights.collapsed);
   }
 };
+export function createAutocompleteDropDown(values, parent) {
+  const { bottom, left, right } = parent.getBoundingClientRect();
+
+  const container = document.createElement("div");
+  container.classList.add("autocomplete-dropdown-menu");
+  container.style.position = "absolute";
+  container.style.top = bottom + "px";
+  container.style.left = left + "px";
+  container.style.right = right + "px";
+  container.style.zIndex = 100;
+
+  const MenuItem = (val) => {
+    const menuItem = document.createElement("button");
+    menuItem.value = val;
+    menuItem.onClick = () => {
+      parent.value = val;
+      document.removeChild(container);
+    };
+    return menuItem;
+  };
+
+  for (const val of values) {
+    container.appendChild(MenuItem(val));
+  }
+
+  document.body.appendChild(container);
+}
+
+export const createOptionElement = (val) => {
+  const elem = document.createElement("option");
+  elem.value = val;
+  return elem;
+};

@@ -30,3 +30,7 @@ export async function sendWeatherApiRequestWithCityName(locationName, apiKey) {
     feelsLike: weatherData.main.feels_like,
   };
 }
+
+export const geocodingUrl = (apiKey, cityName, limit = 5) => {
+  return `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${apiKey}`;
+};
